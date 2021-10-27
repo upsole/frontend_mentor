@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap");
+
+:root {
+  --clr-accent: hsl(234, 12%, 34%);
+  --clr-primary: hsl(229, 6%, 66%);
+  --clr-bg: hsl(0, 0%, 98%);
+
+  --clr-blue: hsl(212, 86%, 64%);
+  --clr-red: hsl(0, 78%, 62%);
+  --clr-cyan: hsl(180, 62%, 55%);
+  --clr-orange: hsl(34, 97%, 64%);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+
+body {
+  background-color: var(--clr-bg);
+  font-family: "Poppins";
+  font-size: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  color: var(--clr-primary);
+  margin-top: 0.5em;
+}
+
+.container {
+  width: 80%;
+  height: 90vh;
+
+  margin-top: 2em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header {
+  text-align: center;
+}
+
+h1,
+h3 {
+  color: var(--clr-accent);
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 1.85rem;
+}
+
+span {
+  font-weight: bolder;
+}
+
+.card-grid {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+
+  align-items: center;
+
+  justify-content: space-around;
+}
+
+.center-column {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 28vw;
+}
+
+.card {
+  width: 19vw;
+  height: 22vh;
+  padding: 2em;
+  margin: 0.5em;
+
+  border-radius: 0.35em;
+
+  position: relative;
+
+  background-color: #fff;
+  box-shadow: var(--clr-accent) 5px 10px 25px -20px;
+}
+
+.card img {
+  position: absolute;
+  bottom: 10%;
+  left: 73%;
+}
+
+.border-red {
+  border-top: 3px solid var(--clr-red);
+}
+
+.border-cyan {
+  border-top: 3px solid var(--clr-cyan);
+}
+
+.border-orange {
+  border-top: 3px solid var(--clr-orange);
+}
+
+.border-blue {
+  border-top: 3px solid var(--clr-blue);
+}
+
+@media (max-width: 799px) {
+  br {
+    display: none;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    height: auto;
+  }
+
+  .card-grid {
+    flex-direction: column;
+    margin-top: 4em;
+  }
+
+  .center-column {
+    width: auto;
+  }
+
+  .card {
+    width: auto;
+  }
+}

@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  /*Text colors*/
+  --dark-blue: hsl(238, 29%, 16%);
+  --accent-gray-blue: hsl(237, 12%, 33%);
+  --gray-blue: hsl(240, 6%, 50%);
+  --light-gray-blue: hsl(240, 5%, 91%);
+
+  --light-red: hsl(14, 88%, 65%);
+  /*Gradient colors*/
+  --violet: hsl(273, 75%, 66%);
+  --blue: hsl(240, 73%, 65%);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*===================================*/
+/*GENERAL*/
+/*===================================*/
+html {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+}
+
+body {
+  /*centers the card for display*/
+  display: grid;
+  place-items: grid;
+  justify-content: center;
+  align-items: center;
+
+  background-image: linear-gradient(var(--violet), var(--blue));
+
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: var(--dark-blue);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: var(--gray-blue);
+}
+
+button {
+  /*resets baseline button styling*/
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/*===================================*/
+/*CARD GENERALS */
+/*===================================*/
+.card {
+  /*display: flex;*/
+  /*justify-content: space-evenly;*/
+  display: grid;
+  grid-template-columns: 25vw 1fr;
+  grid-gap: 6em;
+  grid-template-areas: "img questions";
+
+  height: 55vh;
+  width: 60vw;
+  border-radius: 2rem;
+  padding-top: 3em;
+  padding-bottom: 3em;
+
+  background: white;
+  background-image: url("images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: 1260% 65%;
+
+  box-shadow: 0px 25px 40px rgba(0, 0, 0, 0.325);
+}
+
+.img_wrapper {
+  position: relative;
+  grid-area: img;
+}
+
+.img_wrapper_inner {
+  background-image: url("images/illustration-woman-online-desktop.svg");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 120% center;
+}
+
+#box {
+  position: absolute;
+  top: 42%;
+  left: -25%;
+}
+
+/*#box {*/
+/*position: absolute;*/
+/*left: -8.2em;*/
+
+/*top: 15em;*/
+/*}*/
+
+/*#woman {*/
+/*position: absolute;*/
+/*left: 0;*/
+
+/*position:relative;*/
+/*margin-right: 5rem;*/
+/*margin-left: -10rem;*/
+/*margin-top: 2rem;*/
+/*height: 80%;*/
+/*width: auto;*/
+
+/*box-shadow: 0, 0, 0, #ccc;*/
+/*}*/
+
+/*===================================*/
+/*ACCORDION*/
+/*===================================*/
+.accordion_limit {
+  /*prevents the questions from overflowing the card while expanding*/
+  /*we cant do this in the card div because it messes our design (floating box)*/
+  overflow: hidden;
+}
+.accordion {
+  grid-area: questions;
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 5rem;
+}
+
+.piece {
+  border-bottom: 1px solid var(--light-gray-blue);
+  width: 100%;
+
+  margin-bottom: 1.5em;
+}
+
+.piece .piece-title {
+  color: var(--grey-blue);
+  /*margin: 1.4rem 0rem;*/
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.piece .piece-txt {
+  color: var(--gray-blue);
+  margin-top: 0;
+  display: none;
+
+  text-align: left;
+}
+
+/*===================================*/
+/*BUTTON FUNCTIONALITY*/
+/*===================================*/
+.piece:active h3 {
+  color: var(--light-red);
+}
+
+.show-text .piece-txt {
+  display: block;
+}
+
+.show-text h3 {
+  color: var(--dark-blue);
+}
+
+.show-text .icon {
+  transform: rotate(180deg);
+}
+
+/*===================================*/
+/*MEDIA QUERIES*/
+/*===================================*/
+
+@media (max-width: 450px) {
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas:
+      "img"
+      "questions";
+    grid-gap: 0.5em;
+    position: relative;
+
+    padding: 1rem;
+    margin-top: 15em;
+
+    width: 80vw;
+    height: 68vh;
+  }
+  .img_wrapper {
+    background: url("images/bg-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center 590%;
+  }
+  .img_wrapper_inner {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background-size: 78%;
+    background-position: center;
+    top: -129%;
+  }
+  #box {
+    width: 70px;
+    left: 19%;
+    top: -30%;
+  }
+  .accordion {
+    text-align: center;
+    margin-right: 0;
+  }
+  .piece {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1400px) {
+    /*Work in Progress*/
+  .card {
+    width: 95vw;
+    height: 80vh;
+  }
+}
