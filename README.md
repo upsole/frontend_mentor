@@ -39,6 +39,6 @@
 
 ![Desktop Viewport](time-tracking-dashboard-main/screen1.png)
 
-- [Browser view](https://upsole.github.io/frontend_mentor/time-tracking-dashboard-main/)
-- [Repository](https://github.com/upsole/frontend_mentor/tree/master/time-tracking-dashboard-main)
+- [Browser view](https://upsole.github.io/fe-mentor-time-tracking-dashboard/)
+- [Repository](https://github.com/upsole/fe-mentor-time-tracking-dashboard)
 
